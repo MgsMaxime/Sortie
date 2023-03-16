@@ -7,64 +7,71 @@
 {% block body %}
 
     <a href="{{ path('registration_register') }}">
-        <button>Ajouter un utilisateur</button>
+        <button class="link_button publier">Ajouter</button>
     </a>
 
     {% if participants %}
-        <table border>
-            <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Pseudo</th>
-                <th>email</th>
-                <th>Telephone</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for participant in participants %}
+        <div class="div-table">
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>{{ participant.nom }}</td>
-                    <td>{{ participant.prenom }}</td>
-                    <td>{{ participant.pseudo }}</td>
-                    <td>{{ participant.mail }}</td>
-                    <td>{{ participant.telephone }}</td>
-                    <td>{{ participant.isActif ? 'Actif' : 'Inactif' }}</td>
-
-                    <td>
-                        <form>
-                        <label>
-                                <input type="radio" name="isActif" value="true" {% if participant.isActif() %}checked="checked"{% endif %}>
-                                Actif
-                        </label>
-                        <label>
-                            <input type="radio" name="isActif" value="false"
-                                   {% if not participant.isActif() %}checked="checked"{% endif %}>
-                            Inactif
-                        </label>
-                        </form>
-                    </td>
-
-                    <td>
-                        {# changer état participant et recharger la page #}
-                        <a href="{{ path('participant_changerEtat', { 'id': participant.id }) }}">Modifier l'état</a>
-                    </td>
-
-                    <td><a href="{{ path('participant_supprimer', {'id': participant.id}) }}">
-                            <button class="btn btn-danger"
-                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer {{ participant.nom }} {{ participant.prenom }} ?')">
-                                Supprimer
-                            </button>
-                        </a>
-                    </td>
-
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Pseudo</th>
+                    <th>email</th>
+                    <th>Telephone</th>
+                    <th>Actions</th>
+                    <th>Actifs/inactif</th>
+                    <th>état</th>
+                    <th>supprimer</th>
                 </tr>
-            {% endfor %}
+                </thead>
+                <tbody>
+                {% for participant in participants %}
+                    <tr>
+                        <td>{{ participant.nom }}</td>
+                        <td>{{ participant.prenom }}</td>
+                        <td>{{ participant.pseudo }}</td>
+                        <td>{{ participant.mail }}</td>
+                        <td>{{ participant.telephone }}</td>
+                        <td>{{ participant.isActif ? 'Actif' : 'Inactif' }}</td>
 
-            </tbody>
+                        <td>
+                            <form>
+                                <label>
+                                    <input type="radio" name="isActif" value="true"
+                                           {% if participant.isActif() %}checked="checked"{% endif %}>
+                                    Actif
+                                </label>
+                                <label>
+                                    <input type="radio" name="isActif" value="false"
+                                           {% if not participant.isActif() %}checked="checked"{% endif %}>
+                                    Inactif
+                                </label>
+                            </form>
+                        </td>
 
-        </table>
+                        <td>
+                            {# changer état participant et recharger la page #}
+                            <a href="{{ path('participant_changerEtat', { 'id': participant.id }) }}">Modifier
+                                l'état</a>
+                        </td>
+
+                        <td><a href="{{ path('participant_supprimer', {'id': participant.id}) }}">
+                                <button class="btn btn-danger"
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer {{ participant.nom }} {{ participant.prenom }} ?')">
+                                    Supprimer
+                                </button>
+                            </a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
     {% endif %}
 
 {% endblock %}

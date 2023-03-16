@@ -9,7 +9,7 @@
             <h3>Participant : {{ app.user.pseudo }}</h3>
         </div>
     </div>
-    <div class="formAccueil">
+    <div class="accueilForm">
         {{ form_start(filtresForm) }}
         {{ form_rest(filtresForm) }}
 
@@ -59,24 +59,33 @@
                             {% endif %}
                         </td>
                         <td>
-                            <a href="{{ path('participant_profil_organisateur', {'id': sortie.id}) }}">{{ sortie.organisateur.nom }}</a>
+                            <a href="{{ path('participant_profil_organisateur', {'id': sortie.id}) }}"
+                               class="tableauOrga">{{ sortie
+                                .organisateur.nom }}</a>
                         </td>
                         <td>
                             {% if sortie.etat.libelle is not same as "Activité en cours" and sortie.etat.libelle is not same as "Créee" %}
-                                <a href="{{ path('sortie_afficher', {'id': sortie.id}) }}">Afficher</a>
+                                <a href="{{ path('sortie_afficher', {'id': sortie.id}) }}"
+                                   class="tableauAfficher">Afficher</a>
                             {% endif %}
                             {% if sortie in app.user.sorties and sortie.participants.count >0 and app.user.actif %}
-                                <a href="{{ path('sortie_desinscription', {'id': sortie.id}) }}"> - Se désister</a>
+                                <a href="{{ path('sortie_desinscription', {'id': sortie.id}) }}"
+                                   class="tableauSedesister"> - Se
+                                    désister</a>
                             {% endif %}
                             {% if sortie not in app.user.sorties and sortie.etat.libelle is same as "Ouverte" and sortie.participants.count < sortie.nbInscriptionsMax and app.user.actif %}
-                                <a href="{{ path('sortie_inscription', {'id': sortie.id}) }}"> - S'inscrire</a>
+                                <a href="{{ path('sortie_inscription', {'id': sortie.id}) }}"
+                                   class="tableauSinscrire"> - S'inscrire</a>
                             {% endif %}
                             {% if sortie.organisateur is same as app.user and sortie.etat.libelle is same as "Activité en cours" %}
-                                <a href="{{ path('sortie_modifier', {'id': sortie.id}) }}">Modifier</a>
+                                <a href="{{ path('sortie_modifier', {'id': sortie.id}) }}"
+                                   class="tableauModifier">Modifier</a>
                             {% endif %}
                             {% if sortie.organisateur is same as app.user and sortie.etat.libelle is same as "Créée" %}
-                                <a href="{{ path('sortie_modifier', {'id': sortie.id}) }}">Modifier</a>
-                                <a href="{{ path('sortie_publier', {'id': sortie.id}) }}"> - Publier</a>
+                                <a href="{{ path('sortie_modifier', {'id': sortie.id}) }}"
+                                   class="tabnleauModifier">Modifier</a>
+                                <a href="{{ path('sortie_publier', {'id': sortie.id}) }}" class="tableauPublier"> -
+                                    Publier</a>
                             {% endif %}
                         </td>
                     </tr>

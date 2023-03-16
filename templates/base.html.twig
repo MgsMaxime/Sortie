@@ -30,7 +30,7 @@
 <div class="container">
     <header>
         {# afficher image cliquable en haut du site + h1 pour le référencement #}
-        <div class="navBarLogo">
+        <div class="logoTitre">
             <a href="{{ path('main_accueil') }}">
                 <img src="{{ asset('logo/logolastone.png') }}" alt="Sorties | Accueil" class="logo">
             </a>
@@ -46,12 +46,12 @@
     </header>
     <main>
         {# Le css pour l'image de BG #}
-        {#                <style class="img"> #}
-        {#                    body { #}
-        {#                        background-image: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #}
-        {#                        url("{{ asset('img/partyAnime.jpg') }}"); #}
-        {#                    } #}
-        {#                </style> #}
+{#                        <style class="img">#}
+{#                            body {#}
+{#                                background-image: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),#}
+{#                                url("{{ asset('img/MicrosoftTeams-image.png') }}");#}
+{#                            }#}
+{#                        </style>#}
         {# afficher messages flash stockés #}
         {% for label, messages in app.flashes %}
             {% for message in messages %}

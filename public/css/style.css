@@ -10,47 +10,29 @@ body {
     font-family: 'Golos Text', sans-serif;
 }
 
-/*-----------------------------------Bar de naviguation----------------------------------*/
+
+/*-----------------------------------Barre de naviguation----------------------------------*/
 
 .logo {
     height: 150px;
     width: 150px;
 }
 
-.navBarLogo {
+.logoTitre {
     justify-items: center;
     display: flex;
     top: 5%;
 }
 
-/*.navbartitre {*/
-/*    justify-items: center;*/
-/*    display: flex;*/
-/*    top: 5%;*/
-/*    left: 10%;*/
-/*}*/
-
 .navBar2 {
     position: absolute;
-    top: 5%;
+    top: 6%;
     left: 25%;
-}
-
-.navBar2 a {
-    color: #eebbc3;
-    text-decoration: none;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.navBar2 a:hover {
-    color: #eebbc3;
 }
 
 
 .navLink {
+    font-size: 1.4em;
     border: 5px solid;
     border-color: #eebbc3;
     -webkit-mask: conic-gradient(from 180deg at top 8px right 8px, #232946 90deg, #232946 0) var(--_i, 200%) 0  /200% var(--_i, 8px) border-box no-repeat,
@@ -75,35 +57,50 @@ body {
 
 /*---------------------------------------------------------------Partie formulaire de searcrh------------------------------------------------------------*/
 
-.formAccueil {
-    top: 50%;
-    left: 0;
-    width: 100%;
+/*.formAccueil {*/
+/*    top: 50%;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    padding: 40px;*/
+/*    box-sizing: border-box;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.formAccueil label {*/
+/*    display: inline-block;*/
+/*    width: 30%;*/
+/*    text-align: right;*/
+/*    padding-right: 10px;*/
+/*}*/
+
+/*.formAccueil input {*/
+/*    display: inline-block;*/
+/*    width: 20%;*/
+/*    color: #fffffe;*/
+/*    background: transparent;*/
+/*    border: hidden;*/
+/*    border-bottom: solid 1px;*/
+/*    border-color: #fffffe;*/
+/*    text-align: right;*/
+/*    padding-right: 10px;*/
+/*}*/
+.accueilForm {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    height: 35%;
+    width: 50%;
     padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #121629;
     box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
     border-radius: 10px;
 }
 
-.formAccueil label {
-    display: inline-block;
-    width: 30%;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.formAccueil input {
-    display: inline-block;
-    width: 20%;
-    background: transparent;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
-    text-align: right;
-    padding-right: 10px;
-}
-
-/*--------------------------------------------------------------------------Tableau----------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------Tableau accueil----------------------------------------------------------------------*/
 .div-table {
+    top: 55%;
     display: flex;
     justify-items: center;
     position: absolute;
@@ -120,7 +117,7 @@ table {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
     table-layout: fixed;
     border-collapse: separate;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 th {
@@ -145,6 +142,91 @@ td {
     background: transparent;
 }
 
+.tableauAfficher:hover {
+    color: #b8c1ec;
+}
+
+.tableauSedesister:hover {
+    color: #f54e49;
+}
+
+.tableauSinscrire:hover {
+    color: #45be29;
+}
+
+.tableauOrga:hover {
+    color: #8c7851;
+}
+
+/*--------------------------------------------------------------------------Tableau villes + form villes----------------------------------------------------------------------*/
+/*********Form villes*********/
+.villes {
+    position: absolute;
+    top: 16%;
+    justify-content: left;
+    height: 11%;
+    width: 500px;
+    padding: 40px;
+    background: #121629;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+.villes input{
+    display: inline-block;
+    color: #fffffe;
+    width: 100%;
+    background: transparent;
+    border: hidden;
+    border-bottom: solid 1px;
+    border-color: #fffffe;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/*--------------------------------------------------------------------------Tableau campus----------------------------------------------------------------------*/
+/*****campus****/
+.campus {
+    position: absolute;
+    top: 16%;
+    justify-content: left;
+    height: 11%;
+    width: 500px;
+    padding: 40px;
+    background: #121629;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+.campus input{
+    display: inline-block;
+    color: #fffffe;
+    width: 100%;
+    background: transparent;
+    border: hidden;
+    border-bottom: solid 1px;
+    border-color: #fffffe;
+    text-align: right;
+    padding-right: 10px;
+}
+.campusTable {
+    top: 50%;
+}
+/*--------------------------------------------------------------------------Tableau campus----------------------------------------------------------------------*/
+/*****list user****/
+.listUser {
+    position: absolute;
+    top: 16%;
+    justify-content: left;
+    height: 11%;
+    width: 500px;
+    padding: 40px;
+    background: #121629;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+
+}
 /*--------------------------------------------------------------------------Partie Creation sortie----------------------------------------------------------------------*/
 .formGeneral {
     position: absolute;
@@ -236,6 +318,7 @@ td {
     justify-content: space-between;
 }
 
+.
 .titreForm {
     margin: 0 0 10px;
     /*padding: 0;*/
@@ -248,8 +331,13 @@ td {
 .profil {
     height: 80.9%;
 }
+
 .profil {
     color: #31ce0d;
+}
+.retour:hover{
+    background: #c43733;
+    color: #232946;
 }
 /*--------------------------------------------------------------Modifier sortie----------------------------------------------------------------------------------------*/
 .modifierSortie {
@@ -300,16 +388,40 @@ td {
     margin-top: 25px;
     cursor: none;
 }
+
+.listParticipants {
+    border: solid;
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    height: 70%;
+    width: 300px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #eebbc3;
+    color: #232946;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    overflow: auto;
+    max-height: 25%;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: separate;
+}
+
 /*--------------------------------------------------------------Afficher Participant----------------------------------------------------------------------------------------*/
 .infoOrganisateur {
-    margin-top:60px;
+    margin-top: 60px;
     cursor: none;
 }
+
 /*--------------------------------------------------------------------------Creer profil----------------------------------------------------------------------*/
-.creerProfil{
+.creerProfil {
     top: 53%;
     height: 79%;
 }
+
 /*--------------------------------------------------------------------------Bouttons----------------------------------------------------------------------*/
 
 .link_button {
@@ -424,7 +536,8 @@ td {
     color: #eebbc3;
     background: #232946;
 }
-.loadServer span{
+
+.loadServer span {
 }
 
 /*--------------------------------------------------------------------------Titre----------------------------------------------------------------------*/
@@ -604,5 +717,3 @@ nav li {
     0 0 50px #eebbc3,
     0 0 100px #eebbc3;
 }
-
-
