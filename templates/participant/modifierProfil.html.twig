@@ -16,7 +16,7 @@
                  title="{{ app.user.pseudo }}">
 
     {% endif %}
-
+        <br><br>
     <div class="inputContainer">
         {{ form_start(participantForm) }}
 
@@ -29,13 +29,16 @@
         {{ form_row(participantForm.password) }}
         {{ form_row(participantForm.campus) }}
 
+        <br>
+        <div class="mon_profil flex">
+            <a href="{{ path('participant_modifier', {'id': app.user.id}) }}">
+                <button class="link_button enregistrer">Enregistrer</button>
+            </a>
+            <a href="{{ path('main_accueil') }}">
+                <button type="button" class="link_button annuler">Annuler</button>
+            </a>
+        </div>
 
-        <a href="{{ path('participant_modifier', {'id': app.user.id}) }}">
-            <button class="link_button enregistrer">Enregistrer</button>
-        </a>
-        <a href="{{ path('main_accueil') }}">
-            <button type="button" class="link_button annuler">Annuler</button>
-        </a>
 
         {{ form_end(participantForm) }}
     </div>
