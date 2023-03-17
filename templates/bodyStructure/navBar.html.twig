@@ -9,7 +9,7 @@
                     <a href="{{ path('participant_modifier', {'id': app.user.id}) }}">Mon profil</a>
                 </li>
                 <li class="navLink">
-                    <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                    <a href="{{ path('app_logout') }}">Se déconnecter </a>
                 </li>
             {% endif %}
             {% if is_granted("ROLE_ADMIN") %}

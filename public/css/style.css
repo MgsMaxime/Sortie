@@ -1,27 +1,107 @@
 /*-----------------------------------La partie Accueil----------------------------------*/
-* {
-    margin: 2px;
-}
+/** {*/
+/*    margin: 0 3% 0 3%;*/
+/*}*/
 
 body {
     background-color: #232946;
     background-size: cover;
     color: #b8c1ec;
     font-family: 'Golos Text', sans-serif;
+    margin: 0 10% 0 10%;
 }
 
-/*-----------------------------------Bar de naviguation----------------------------------*/
+/*-----------------------------------Titre + logo du site----------------------------------*/
 
-.logo {
-    height: 150px;
-    width: 150px;
+.container {
+    max-width: 1200px;
+    margin: 0 ;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .navBarLogo {
-    justify-items: center;
     display: flex;
-    top: 5%;
+    align-items: center;
+
 }
+
+.logo {
+    height: 200px;
+    width: 200px;
+    margin-right: -10%;
+    margin-left: -20%;
+}
+
+.sortieH2 {
+    font-size: 2rem;
+    padding: 10%;
+    margin: 10% 10% 0 -50%;
+}
+
+.navBar2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navBar2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sortieH2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+/*.navBarLogo {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+
+/*}*/
+
+/*.logo {*/
+/*    height: 200px;*/
+/*    width: 200px;*/
+/*}*/
+
+/*.sortieH2 {*/
+/*    font-size: 4rem;*/
+/*    margin: 0;*/
+/*}*/
+
+/*@media screen and (max-width: 767px) {*/
+/*    .sortieH2 {*/
+/*        font-size: 1.5rem;*/
+/*    }*/
+/*}*/
+
+
+
+/*-----------------------------------Barre de navigation----------------------------------*/
+
+/*.logo {*/
+/*    height: 150px;*/
+/*    width: 150px;*/
+/*}*/
+
+/*.navBarLogo {*/
+/*    justify-items: center;*/
+/*    display: flex;*/
+/*    top: 5%;*/
+/*}
 
 /*.navbartitre {*/
 /*    justify-items: center;*/
@@ -30,33 +110,33 @@ body {
 /*    left: 10%;*/
 /*}*/
 
-.navBar2 {
-    position: absolute;
-    top: 5%;
-    left: 25%;
-}
+/*.navBar2 {*/
+/*    position: absolute;*/
+/*    top: 5%;*/
+/*    left: 25%;*/
+/*}*/
 
-.navBar2 a {
-    color: #eebbc3;
-    text-decoration: none;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    display: inline-block;
-}
+/*.navBar2 a {*/
+/*    color: #eebbc3;*/
+/*    text-decoration: none;*/
+/*    font-size: 1.1em;*/
+/*    text-transform: uppercase;*/
+/*    font-weight: 500;*/
+/*    display: inline-block;*/
+/*}*/
 
-.navBar2 a:hover {
-    color: #eebbc3;
-}
+/*.navBar2 a:hover {*/
+/*    color: #eebbc3;*/
+/*}*/
 
 
 .navLink {
-    border: 5px solid;
-    border-color: #eebbc3;
+    border: 5px solid #eebbc3;
     -webkit-mask: conic-gradient(from 180deg at top 8px right 8px, #232946 90deg, #232946 0) var(--_i, 200%) 0  /200% var(--_i, 8px) border-box no-repeat,
     conic-gradient(at bottom 8px left 8px, #232946 90deg, #232946 0) 0 var(--_i, 200%)/var(--_i, 8px) 200% border-box no-repeat,
     linear-gradient(#232946 0 0) padding-box no-repeat;
     transition: .3s, -webkit-mask-position .3s .3s;
+    padding: 0 5% 0 0;
 }
 
 .navLink:hover {
@@ -95,11 +175,11 @@ body {
     display: inline-block;
     width: 20%;
     background: transparent;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: right;
     padding-right: 10px;
+    color: white;
 }
 
 /*--------------------------------------------------------------------------Tableau----------------------------------------------------------------------*/
@@ -114,13 +194,15 @@ body {
 }
 
 table {
-    width: 90%;
+    width: 95%;
     font-size: .9em;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
     table-layout: fixed;
     border-collapse: separate;
     border-radius: 5px;
+    word-wrap: break-word;
+    margin-left: 2%;
 }
 
 th {
@@ -133,10 +215,11 @@ thead {
     font-weight: bold;
     color: #0B0A07;
     background: #eebbc3;
+    padding: 1em .5em;
 }
 
 td, th {
-    padding: 1em .5em;
+    padding: 1em .2em;
     vertical-align: middle;
 }
 
@@ -148,11 +231,11 @@ td {
 /*--------------------------------------------------------------------------Partie Creation sortie----------------------------------------------------------------------*/
 .formGeneral {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     height: 70%;
     width: 500px;
-    padding: 40px;
+    padding: 10px 40px;
     transform: translate(-50%, -50%);
     background: #121629;
     box-sizing: border-box;
@@ -176,9 +259,8 @@ td {
     color: #fffffe;
     width: 100%;
     background: transparent;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: right;
     padding-right: 10px;
 }
@@ -192,9 +274,8 @@ td {
     color: #fffffe;
     width: 100%;
     background: transparent;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: left;
     padding-right: 10px;
 }
@@ -208,9 +289,8 @@ td {
     color: #fffffe;
     width: 100%;
     background: transparent;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: right;
     padding-right: 10px;
 }
@@ -225,9 +305,8 @@ td {
     width: 100%;
     color: #b8c1ec;
     background: #121629;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: right;
     padding-right: 10px;
 }
@@ -249,7 +328,7 @@ td {
     height: 80.9%;
 }
 .profil {
-    color: #31ce0d;
+    color: #369dd4;
 }
 /*--------------------------------------------------------------Modifier sortie----------------------------------------------------------------------------------------*/
 .modifierSortie {
@@ -261,9 +340,8 @@ td {
     color: #fffffe;
     width: 100%;
     background: transparent;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: left;
     padding-right: 10px;
 }
@@ -271,11 +349,10 @@ td {
 .inputContainer select {
     display: inline-block;
     width: 100%;
-    color: #b8c1ec;
+    color: #ffffff;
     background: #121629;
-    border: hidden;
-    border-bottom: solid 1px;
-    border-color: #fffffe;
+    border: hidden #fffffe;
+    border-bottom: 1px solid;
     text-align: right;
     padding-right: 10px;
 }
@@ -353,7 +430,7 @@ td {
 }
 
 .publier:hover {
-    background: #31ce0d;
+    background: #369dd4;
 }
 
 .enregistrer {
@@ -367,7 +444,7 @@ td {
 }
 
 .enregistrer:hover {
-    background: #31ce0d;
+    background: #369dd4;
 }
 
 .lieuNouveau {
@@ -385,7 +462,7 @@ td {
 
 .lieuNouveau:hover {
     background: #121629;
-    color: #31ce0d;
+    color: #369dd4;
 }
 
 .btnAccueil {
@@ -450,6 +527,7 @@ td {
 a {
     text-decoration: none;
     color: #eebbc3;
+    margin-left: 25%;
 }
 
 
@@ -475,11 +553,13 @@ main {
 nav ul {
     display: flex;
     list-style: none;
-    padding-left: 0;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 nav li {
-    margin-right: 1rem; /*pourcentage de taille en fonction du zoom 1 rem = 10px pour zoom = 100%*/
+    padding: 0 1% 0 1%;
+    /*margin-right: 2rem; !*pourcentage de taille en fonction du zoom 1 rem = 10px pour zoom = 100%*!*/
 }
 
 /*----------------------Creation Sortie Formulaire------------------*/
@@ -592,7 +672,8 @@ nav li {
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    margin-left: 15%;
 }
 
 .loginBox .submit:hover {
@@ -605,4 +686,18 @@ nav li {
     0 0 100px #eebbc3;
 }
 
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.mon_profil.flex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mon_profil.flex a {
+    margin: 10px;
+}

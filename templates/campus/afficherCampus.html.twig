@@ -11,6 +11,7 @@
         <input type="text" id="saisie" name="saisie" value="{{ saisie ?? '' }}">
         <button type="submit" class="link_button">Rechercher</button>
     </form>
+    <br>
 
     {% if allCampus is not empty %}
         <table border>
@@ -36,7 +37,7 @@
                     <td>
                         {# liens Modifier / Supprimer #}
                         <a href="{{ path('campus_modifier', {'id': campus.id}) }}">Modifier </a>
-                        <a href="{{ path('campus_supprimer', {'id': campus.id}) }}"> - Supprimer</a>
+                        <a href="{{ path('campus_supprimer', {'id': campus.id}) }}">Supprimer</a>
                     </td>
                 </tr>
             {% endfor %}

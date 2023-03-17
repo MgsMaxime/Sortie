@@ -16,20 +16,21 @@
             {{ form_start(registrationForm) }}
             {{ form_row(registrationForm.photo_profil) }}
 
-            {{ form_row(registrationForm.pseudo, {'attr': {'disabled': false}}) }}
-            {{ form_row(registrationForm.prenom, {'attr': {'disabled': false}}) }}
-            {{ form_row(registrationForm.nom, {'attr': {'disabled': false}}) }}
-            {{ form_row(registrationForm.telephone, {'attr': {'disabled': false}}) }}
-            {{ form_row(registrationForm.mail, {'attr': {'disabled': false}}) }}
-            {{ form_row(registrationForm.plainPassword, {label: 'Mot de passe', 'attr': {'disabled': false}}) }}
-            {{ form_row(registrationForm.campus, {'attr': {'disabled': false}}) }}
+            {{ form_row(registrationForm.pseudo) }}
+            {{ form_row(registrationForm.prenom) }}
+            {{ form_row(registrationForm.nom) }}
+            {{ form_row(registrationForm.telephone) }}
+            {{ form_row(registrationForm.mail) }}
+            {{ form_row(registrationForm.plainPassword) }}
+            {{ form_row(registrationForm.campus) }}
 
-        {# TODO : régler le pb The EntityManager is closed quand pseudo ou mail existe déjà #}
+            <br>
         {# enregistrement d'un utilisateur crée manuellement #}
-        <button type="submit" class="btn">Enregistrer</button>
+        <button type="submit" class="link_button enregistrer">Enregistrer</button>
 
             {{ form_end(registrationForm) }}
         </div>
+    <br><br>
 
     {% if is_granted("ROLE_ADMIN") %}
 
@@ -38,7 +39,7 @@
         {{ form_start(csvForm) }}
         {{ form_widget(csvForm) }}
     </div>
-
+        <br><br>
         <button type="submit" class="link_button enregistrer">Enregistrer</button>
         <a href="{{ path("participant_list") }}">
             <button type="button" class="link_button annule">Annuler</button>

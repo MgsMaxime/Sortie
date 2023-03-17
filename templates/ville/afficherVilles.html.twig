@@ -12,7 +12,7 @@
         <input type="text" id="saisie" name="saisie" value="{{ saisie ?? '' }}">
         <button type="submit" class="link_button">Rechercher</button>
     </form>
-
+    <br>
 
     {% if villes is not empty %}
 
@@ -44,7 +44,7 @@
                             <a href="{{ path('ville_modifier', {'id': ville.id}) }}" class="btn btn-primary">Modifier</a>
                             <a href="{{ path('ville_supprimer', {'id': ville.id}) }}" class="btn btn-danger"
                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer {{ ville.nom }} ?')">
-                                Supprimer
+                                - Supprimer
                             </a>
                         </td>
                     </tr>

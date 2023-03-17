@@ -7,7 +7,7 @@
 {% block body %}
 
     <a href="{{ path('registration_register') }}">
-        <button>Ajouter un utilisateur</button>
+        <button class="link_button btnCreerSortie">Ajouter</button>
     </a>
 
     {% if participants %}
@@ -38,6 +38,7 @@
                                 <input type="radio" name="isActif" value="true" {% if participant.isActif() %}checked="checked"{% endif %}>
                                 Actif
                         </label>
+                            <br>
                         <label>
                             <input type="radio" name="isActif" value="false"
                                    {% if not participant.isActif() %}checked="checked"{% endif %}>
@@ -51,11 +52,9 @@
                         <a href="{{ path('participant_changerEtat', { 'id': participant.id }) }}">Modifier l'état</a>
                     </td>
 
-                    <td><a href="{{ path('participant_supprimer', {'id': participant.id}) }}">
-                            <button class="btn btn-danger"
+                    <td><a href="{{ path('participant_supprimer', {'id': participant.id}) }}"
                                     onclick="return confirm('Êtes-vous sûr de vouloir supprimer {{ participant.nom }} {{ participant.prenom }} ?')">
                                 Supprimer
-                            </button>
                         </a>
                     </td>
 
